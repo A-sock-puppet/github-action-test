@@ -13,12 +13,12 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-      - name: Compile Typst to PDF
-        uses: A-sock-puppet/compile-typst-action@v1
+      - name: Compile Typst to HTML
+        uses: A-sock-puppet/compile-typst-action@v1.0.1
         with:
-          source_paths: 'test.typ'
+          source_paths: 'src/index.typ'
           output_paths: 'index.html'
       - name: Commit compiled HTMLs
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: '[continuous deployment]: Compiled Typst to HTML'
+          commit_message: '[github action] Compiled Typst to HTML'
